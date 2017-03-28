@@ -1,22 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BoxDetailComponent } from './components/box/box-detail.component'
+import { BoxComponent } from './components/box/box.component';
+import { BoxDetailComponent } from './components/box-detail/box-detail.component'
+import { BoxService } from './box.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BoxComponent,
     BoxDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot([
+      {
+        path: 'types',
+        component: BoxComponent
+      }
+    ])
   ],
-  providers: [],
+  providers: [BoxService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+
+}

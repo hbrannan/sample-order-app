@@ -1,4 +1,6 @@
 export class Box {
-  material: string;
+  type: string;
   id: number;
+  material: Array<string>;
+  dimensions: Array<string>;
 }

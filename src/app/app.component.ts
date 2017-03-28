@@ -1,31 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Box } from './components/box/box';
-import { BoxService } from './box.service';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector:'order-form-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [BoxService]
+  providers:[]
 })
 
-export class AppComponent implements OnInit {
-  title = 'Arka Customer Order Form';
-  boxes : Box[];
-  selectedBox: Box;
-
-  constructor(private boxService: BoxService) {}
-
-  getBoxes(): void {
-    this.boxService.getBoxes().then(boxes => this.boxes = boxes);
-  }
-
-  ngOnInit(): void {
-    this.getBoxes();
-  }
-
-  onSelect(box: Box) : void {
-    this.selectedBox = box;
-  }
+export class AppComponent {
+  title = 'Arka Custom Packaging Order Form';
 }
-

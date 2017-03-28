@@ -1,0 +1,13 @@
+<div *ngIf="box">
+  <h2>{{box.type}} details!</h2>
+  <div><label>id: </label>{{box.id}}</div>
+  <div>
+    <ul>material:
+      <li *ngFor="item of box.material">
+        <input [(ngModel)]="box.material" placeholder="material"/>
+        <div>{{item}}</div>
+      </li>
+        <div>X</div>
+    </ul>
+  </div>
+</div>
