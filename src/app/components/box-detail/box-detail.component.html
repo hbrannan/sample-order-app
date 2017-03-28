@@ -1,13 +1,31 @@
 <div *ngIf="box">
-  <h2>{{box.type}} details!</h2>
-  <div><label>id: </label>{{box.id}}</div>
-  <div>
-    <ul>material:
-      <li *ngFor="item of box.material">
-        <input [(ngModel)]="box.material" placeholder="material"/>
-        <div>{{item}}</div>
-      </li>
-        <div>X</div>
-    </ul>
-  </div>
+  <h2>Select {{box.type}} details</h2>
+  <form>
+    <label>Material Choice:</label>
+    <select placeholder="material">
+      <option>{{box.material[0]}}</option>
+      <option>{{box.material[1]}}</option>
+      <option>{{box.material[2]}}</option>
+    </select>
+    <label>Dimensions Choice:</label>
+    <select placeholder="material">
+      <option>{{box.dimensions[0]}}</option>
+      <option>{{box.dimensions[1]}}</option>
+      <option>{{box.dimensions[2]}}</option>
+    </select>
+    <input type="number" name="quantity" placeholder="quantity"/>
+    <label>Shipping Options</label>
+    <select>
+      <option>Fedex Ground</option>
+      <option>Standard</option>
+      <option>Priority</option>
+    </select>
+    <label>User Info</label>
+    <input type="text" name="name" placeholder="Nat King Coleslaw" />
+    <input type="text" name="Address" placeholder="e.g., 1111 Lemonade Springs Dr, Watsonville CA 96709" />
+    <input type="text" name="company" placeholder="Willy Wonka Chocolate Factory" />
+    <input type="phone" name="phone" placeholder="333-333-3333" />
+    <input type="email" name="email" placeholder="example@email.com" />
+    <button class="submit" name="submit">Submit Order (assume paid)</button>
+  </form>
 </div>

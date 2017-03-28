@@ -7,13 +7,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BoxComponent } from './components/box/box.component';
 import { BoxDetailComponent } from './components/box-detail/box-detail.component'
+import { BoxMaterialComponent } from './components/box-material/box-material.component'
 import { BoxService } from './box.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoxComponent,
-    BoxDetailComponent
+    BoxDetailComponent,
+    BoxMaterialComponent
   ],
   imports: [
     BrowserModule,
