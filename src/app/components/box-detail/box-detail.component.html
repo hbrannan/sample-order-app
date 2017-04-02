@@ -1,31 +1,57 @@
 <div *ngIf="box">
   <h2>Select {{box.type}} details</h2>
-  <form>
-    <label>Material Choice:</label>
-    <select placeholder="material">
-      <option>{{box.material[0]}}</option>
-      <option>{{box.material[1]}}</option>
-      <option>{{box.material[2]}}</option>
+  {{diagnostic}}
+  <form #orderForm="ngForm">
+    <div class="form__group">
+      <label for="material">Material Choice:</label>
+      <select class="form-control" id="material" placeholder="material"
+        name="material"
+        [(ngModel)]="model.material"
+        #spy
+        required>
+        <option *ngFor="let material of materials" [value]="material">{{material}}</option>
+      </select>
+
+      <label for="dimension">Dimensions Choice:</label>
+      <select class="form-control" id="dimension" placeholder="dimension"
+        name="dimension"
+        [(ngModel)]="model.dimension"
+        required>
+        <option *ngFor="let dimension of dimensions" [value]="dimension">{{dimension}}</option>
+      </select>
+    </div> <!-- form__group -->
+
+    <input class="form-control" type="number" name="quantity" placeholder="quantity"/>
+
+    <label for="shippingOption">Shipping Options</label>
+    <select class="form-control" id="shippingOption" placeholder="shippingOption"
+      name="shippingOption"
+      [(ngModel)]="model.shippingOption"
+      required>
+      <option *ngFor="let shippingOption of shippingOptions">{{shippingOption}}</option>
     </select>
-    <label>Dimensions Choice:</label>
-    <select placeholder="material">
-      <option>{{box.dimensions[0]}}</option>
-      <option>{{box.dimensions[1]}}</option>
-      <option>{{box.dimensions[2]}}</option>
-    </select>
-    <input type="number" name="quantity" placeholder="quantity"/>
-    <label>Shipping Options</label>
-    <select>
-      <option>Fedex Ground</option>
-      <option>Standard</option>
-      <option>Priority</option>
-    </select>
-    <label>User Info</label>
-    <input type="text" name="name" placeholder="Nat King Coleslaw" />
-    <input type="text" name="Address" placeholder="e.g., 1111 Lemonade Springs Dr, Watsonville CA 96709" />
-    <input type="text" name="company" placeholder="Willy Wonka Chocolate Factory" />
-    <input type="phone" name="phone" placeholder="333-333-3333" />
-    <input type="email" name="email" placeholder="example@email.com" />
-    <button class="submit" name="submit">Submit Order (assume paid)</button>
+
+    <div class="form__group">
+      <label for="userInfo">User Info</label>
+      <input class="form-control" type="text" name="name" placeholder="Nat King Coleslaw"
+        [(ngModel)]="model.name"
+        #name="ngModel"
+        required/>
+      <div [hidden]="name.valid || name.pristine"
+        class="alert alert-danger">
+        Name is required
+      </div>
+
+      <input class="form-control" type="text" name="Address" placeholder="e.g., 1111 Lemonade Springs Dr, Watsonville CA 96709" />
+
+      <input class="form-control" type="text" name="company" placeholder="Willy Wonka Chocolate Factory"/>
+
+      <input class="form-control" type="phone" name="phone" placeholder="333-333-3333"/>
+
+      <input class="form-control" type="email" name="email" placeholder="example@email.com" />
+    </div> <!-- form__group -->
+    <button class="submit" name="submit" (click)="onSubmit();orderForm.reset()">Submit Order (assume paid)</button>
+      {{getData}}
+      {{postData}}
   </form>
 </div>
