@@ -9,7 +9,7 @@ export class RestfullService {
   constructor(private http:Http ) { }
 
   getCurrentTime(){
-    return this.http.get('http://date.jsontest.com')
+    return this.http.get('https://sample-order-service.herokuapp.com/orders-data/order')
       .map(res => res.json());
   }
 
@@ -20,7 +20,7 @@ export class RestfullService {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
-    return this.http.post('http://validate.jsontest.com/', params, options)
+    return this.http.post('https://sample-order-service.herokuapp.com/orders-data/order', params, options)
     .map(res => res.json());
   }
 
