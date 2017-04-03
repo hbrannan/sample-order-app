@@ -1,20 +1,15 @@
+import { NgModule } from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 
+import { BoxDetailComponent } from '../box-detail/box-detail.component';
 import { BoxComponent } from './box.component';
 
-describe('AppComponent', () => {
+describe('BoxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         BoxComponent
-      ],
+      ]
     }).compileComponents();
   }));
-
-  it('should create the box component', async(() => {
-    const fixture = TestBed.createComponent(BoxComponent);
-    const box = fixture.debugElement.componentInstance;
-    expect(box).toBeTruthy();
-  }));
-
 });
