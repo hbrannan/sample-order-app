@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BoxService } from '../../box.service';
-import { RestfullService } from '../../restfull.service';
+import { BoxService } from '../../data-services/box.service';
+import { RestfullService } from '../../data-services/restfull.service';
 import { Box } from '../box/box';
 import { Order } from './order';
 

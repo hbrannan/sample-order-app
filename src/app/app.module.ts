@@ -7,8 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BoxComponent } from './components/box/box.component';
 import { BoxDetailComponent } from './components/box-detail/box-detail.component'
-import { BoxService } from './box.service';
-import { RestfullService } from './restfull.service';
+import { BoxService } from './data-services/box.service';
+import { RestfullService } from './data-services/restfull.service';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Box } from './box';
-import { BoxService } from '../../box.service';
+import { BoxService } from '../../data-services/box.service';
 
 @Component({
   selector: 'order-form-boxes',

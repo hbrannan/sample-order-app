@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Box } from './components/box/box'
+import { Box } from '../components/box/box'
 import { BOXES } from './mock-box-data';
 
 @Injectable()
