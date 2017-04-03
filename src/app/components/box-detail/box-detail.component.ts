@@ -18,26 +18,24 @@ export class BoxDetailComponent {
 
   getData: string;
   postData: string;
+  responseMessage: string;
 
-  materials = ['str0', 'str01', 'str2', 'str', 'str'];
-  dimensions = ['str0', 'str01', 'str2', 'str', 'str'];
-  shippingOptions = ['Fedex Ground', 'First Class','Priority'];
+  materials = ['TODO', 'fetch', 'from', 'dataSource', 'onInit'];
+  dimensions = ['TODO', 'fetch', 'from', 'dataSource', 'onInit'];
+  shippingOptions = ['Fedex Ground', 'First Class','Priority', 'TODO', 'fetch', 'from', 'dataSource', 'onInit'];
 
   submitted = false;
 
-  model = new Order('str', 'str', 9, 'str', 'str', 'str', 'str', 'str', 'str');
+  model = new Order('', '', 9, '', '', '', '', '', '');
 
   onSubmit() : void {
     this.submitted = true;
     this.restfullService.getCurrentTime()
       .subscribe(
-        data => this.getData = JSON.stringify(data),
-        error => alert(error),
-        () => console.log('Finished')
-      );
-    this.restfullService.validate(JSON.stringify(this.model))
-      .subscribe(
-        data => this.postData = JSON.stringify(data),
+        data => {
+          this.getData = JSON.stringify(data);
+          this.responseMessage = 'Thank you! Your order has been submitted.'
+        },
         error => alert(error),
         () => console.log('Finished')
       );

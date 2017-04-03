@@ -42,16 +42,16 @@
         Name is required
       </div>
 
-      <input class="form-control" type="text" name="Address" placeholder="e.g., 1111 Lemonade Springs Dr, Watsonville CA 96709" />
+      <input class="form-control" type="text" name="Address" placeholder="Address: e.g., 1111 Lemonade Springs Dr, Watsonville CA 96709" />
 
-      <input class="form-control" type="text" name="company" placeholder="Willy Wonka Chocolate Factory"/>
+      <input class="form-control" type="text" name="company" placeholder="Company: e.g., Willy Wonka Chocolate Factory"/>
 
-      <input class="form-control" type="phone" name="phone" placeholder="333-333-3333"/>
+      <input class="form-control" type="phone" name="phone" placeholder="Phone Number: e.g., 333-333-3333"/>
 
-      <input class="form-control" type="email" name="email" placeholder="example@email.com" />
+      <input class="form-control" type="email" name="email" placeholder="Email: e.g., example@email.com" />
     </div> <!-- form__group -->
     <button class="submit" name="submit" (click)="onSubmit();orderForm.reset()">Submit Order (assume paid)</button>
-      {{getData}}
-      {{postData}}
   </form>
+  <div class="response-container">{{responseMessage}}</div>
 </div>
+
