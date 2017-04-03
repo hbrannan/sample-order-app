@@ -1,9 +1,8 @@
-<div *ngIf="box">
-  <h2>Select {{box.type}} details</h2>
-  {{diagnostic}}
+<div class="box-details__container" *ngIf="box">
+  <h2>Tell Us Your {{box.type}} Packaging Details</h2>
   <form #orderForm="ngForm">
     <div class="form__group">
-      <label for="material">Material Choice:</label>
+      <label for="material">Material (Please Choose From Below):</label>
       <select class="form-control" id="material" placeholder="material"
         name="material"
         [(ngModel)]="model.material"
@@ -12,7 +11,7 @@
         <option *ngFor="let material of materials" [value]="material">{{material}}</option>
       </select>
 
-      <label for="dimension">Dimensions Choice:</label>
+      <label for="dimension">Dimensions (Please Choose From Below):</label>
       <select class="form-control" id="dimension" placeholder="dimension"
         name="dimension"
         [(ngModel)]="model.dimension"
@@ -21,9 +20,10 @@
       </select>
     </div> <!-- form__group -->
 
+    <label for="quantity">Quantity</label>
     <input class="form-control" type="number" name="quantity" placeholder="quantity"/>
 
-    <label for="shippingOption">Shipping Options</label>
+    <label for="shippingOption">Shipping Options (Please Choose From Below):</label>
     <select class="form-control" id="shippingOption" placeholder="shippingOption"
       name="shippingOption"
       [(ngModel)]="model.shippingOption"
@@ -32,7 +32,7 @@
     </select>
 
     <div class="form__group">
-      <label for="userInfo">User Info</label>
+      <label for="userInfo">Your Info</label>
       <input class="form-control" type="text" name="name" placeholder="Nat King Coleslaw"
         [(ngModel)]="model.name"
         #name="ngModel"

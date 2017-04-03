@@ -1,5 +1,5 @@
-<ul>
-  <li *ngFor="let box of boxes"
+<ul class="box-list">
+  <li class="box-list__item" *ngFor="let box of boxes"
       [class.selected]="box === selectedBox"
       (click)="onSelect(box)">
     <span>{{box.id}}: {{box.type}}</span>

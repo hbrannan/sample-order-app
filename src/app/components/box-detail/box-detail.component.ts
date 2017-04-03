@@ -8,6 +8,7 @@ import { Order } from './order';
 @Component ({
   selector: 'box-detail',
   templateUrl:'./box-detail.component.html',
+  styleUrls: ['./box-detail.component.css'],
   providers: [RestfullService]
 })
 

@@ -18,9 +18,14 @@ h1 {
 
 .cta {
   display: block;
+  width: min-content;
+  margin: 50px auto;
+  padding: 25px 50px;
+  border-radius: 4px;
+  background: #ccc;
+  color: #fff;
   text-align: center;
   text-decoration: none;
-  margin: 50px auto;
 }
 
 .banner {
